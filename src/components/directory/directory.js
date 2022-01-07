@@ -1,44 +1,44 @@
-import React, { Component } from "react";
+import React from "react";
 import "./directory.scss";
 import MenuItem from "../menu-item/menu-item";
 
-class Directory extends Component {
+class Directory extends React.Component {
 	constructor() {
 		super();
 
 		this.state = {
 			sections: [
 				{
-					title: "Hats",
+					title: "hats",
 					imageUrl: "https://i.ibb.co/cvpntL1/hats.png",
 					id: 1,
-					linkUrl: "shop/hats",
+					linkUrl: "hats",
 				},
 				{
-					title: "Jackets",
+					title: "jackets",
 					imageUrl: "https://i.ibb.co/px2tCc3/jackets.png",
 					id: 2,
-					linkUrl: "shop/jackets",
+					linkUrl: "",
 				},
 				{
-					title: "Sneakers",
+					title: "sneakers",
 					imageUrl: "https://i.ibb.co/0jqHpnp/sneakers.png",
 					id: 3,
-					linkUrl: "shop/sneakers",
+					linkUrl: "",
 				},
 				{
-					title: "Womens",
+					title: "womens",
 					imageUrl: "https://i.ibb.co/GCCdy8t/womens.png",
 					size: "large",
 					id: 4,
-					linkUrl: "shop/womens",
+					linkUrl: "",
 				},
 				{
-					title: "Mens",
+					title: "mens",
 					imageUrl: "https://i.ibb.co/R70vBrQ/men.png",
 					size: "large",
 					id: 5,
-					linkUrl: "shop/mens",
+					linkUrl: "",
 				},
 			],
 		};
@@ -47,8 +47,8 @@ class Directory extends Component {
 	render() {
 		return (
 			<div className="dir-menu">
-				{this.state.sections.map(({ title, imageUrl, id, size }) => (
-					<MenuItem key={id} title={title} imageUrl={imageUrl} />
+				{this.state.sections.map(({ id, ...otherSectionProps }) => (
+					<MenuItem key={id} {...otherSectionProps} />
 				))}
 			</div>
 		);
