@@ -2,3 +2,7 @@ body {
 	font-family: "Helvetica Neue", sans-serif;
 	padding: 20px 60px;
 }
+
+* {
+	box-sizing: border-box;
+}
