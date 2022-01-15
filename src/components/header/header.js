@@ -8,7 +8,7 @@ const Header = ({ currentUser }) => {
 	return (
 		<div className="header">
 			<Link to="/" className="logo-container">
-				<img src={logo} alt="logo" width={150} />
+				<h3 className="logo">Emilia Clothing</h3>
 			</Link>
 
 			<div className="options">

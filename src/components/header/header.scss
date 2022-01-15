@@ -4,14 +4,29 @@
 	display: flex;
 	justify-content: space-between;
 	margin-bottom: 25px;
+	border-bottom: 1px solid #e5dcc3;
+
+	a:-webkit-any-link {
+		text-decoration: none;
+		color: inherit;
+	}
 
 	.logo-container {
-		height: 0%;
+		padding: 20px 15px;
+		cursor: pointer;
+		.logo {
+			font-weight: 500;
+			font-size: 1.3rem;
+			letter-spacing: 0.5px;
+		}
 	}
 
 	.options {
 		width: 50%;
 		height: 100%;
+		font-size: 0.9rem;
+		font-weight: 500;
+		letter-spacing: 0.5px;
 		display: flex;
 		align-items: center;
 		justify-content: flex-end;
