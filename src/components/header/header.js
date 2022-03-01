@@ -1,10 +1,13 @@
 import React from "react";
 import "./header.scss";
-import { Link } from "react-router-dom";
 import { auth } from "../../firebase/firebase.utils";
 import { connect } from "react-redux"; //component to redux
 import CartIcon from "../card-icon/cart-icon";
 import CartDropdown from "../cart-dropdown/cart-dropdown";
+
+import { Link } from "react-router-dom";
+import { selectCartHidden } from "../../redux/cart/cart.selectors";
+import { selectCurrentUser } from "../../redux/user/user.selectors";
 
 const Header = ({ currentUser, hidden }) => {
 	return (
@@ -17,7 +20,7 @@ const Header = ({ currentUser, hidden }) => {
 				<Link to="/shop" className="option">
 					Shop
 				</Link>
-				<Link to="/shop" className="option">
+				<Link to="/contact" className="option">
 					Contact
 				</Link>
 				<Link to="/checkout" className="option">
@@ -42,8 +45,8 @@ const Header = ({ currentUser, hidden }) => {
 };
 
 const mapStateToProps = (state) => ({
-	currentUser: state.user.currentUser,
-	hidden: state.cart.hidden,
+	currentUser: selectCurrentUser(state),
+	hidden: selectCartHidden(state),
 });
 
 export default connect(mapStateToProps)(Header);
